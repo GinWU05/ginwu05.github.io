@@ -4,7 +4,6 @@ date: 2023-06-21 12:50:55
 categories:
 tags: github
 ---
-
 ## 前言
 
 进阶fork技巧，对初学者不是那么友好，建议拥有以下前置技能：
@@ -71,11 +70,11 @@ tags: github
 比如我的[screw-hand/github-profile-trophy](https://github.com/screw-hand/github-profile-trophy)，就有两个上游：
 
 ```shell
-https://github.com/ryo-ma/github-profile-trophy.git       # upstream
-https://github.com/lucthienphong1120/github-trophies.git  # super-upstream
+https://github.com/ryo-ma/github-profile-trophy.git       # upsteam
+https://github.com/lucthienphong1120/github-trophies.git  # super-upsteam
 ```
 
-一个叫`upstream`，一个叫`super-upstream`，你喜欢叫其他的也行，就跟`origin`一样，这只是git的远端名称。
+一个叫`upsteam`，一个叫`super-upsteam`，你喜欢叫其他的也行，就跟`origin`一样，这只是git的远端名称。
 
 *我的[screw-hand/github-profile-trophy](https://github.com/screw-hand/github-profile-trophy)经过上文的github support操作，已经不是fork的仓库了。不过以下操作，跟是否为fork类型的仓库无关，你可以假设此仓库还是fork类型的。但是跟commit tree有关，待会我们会遇到的。*
 
@@ -105,42 +104,42 @@ git reset $(git rev-list --max-parents=0 HEAD) --hard
 
 # HEAD is now at 5a9cbef first commit
 
-# 4. 添加多个远端仓库，分别为: upstream, super-upstream
-git remote add upstream https://github.com/ryo-ma/github-profile-trophy.git
-git remote add super-upstream https://github.com/lucthienphong1120/github-trophies.git
+# 4. 添加多个远端仓库，分别为: upsteam, super-upsteam
+git remote add upsteam https://github.com/ryo-ma/github-profile-trophy.git
+git remote add super-upsteam https://github.com/lucthienphong1120/github-trophies.git
 
 # 5. 检查远端仓库是否成功设置,将有3个远端仓库
 git remote -v
 
 # origin	https://github.com/screw-hand/github-profile-trophy.git (fetch)
 # origin	https://github.com/screw-hand/github-profile-trophy.git (push)
-# super-upstream  https://github.com/lucthienphong1120/github-trophies.git (fetch)
-# super-upstream  https://github.com/lucthienphong1120/github-trophies.git (push)
-# upstream        https://github.com/ryo-ma/github-profile-trophy.git (fetch)
-# upstream        https://github.com/ryo-ma/github-profile-trophy.git (push)
+# super-upsteam  https://github.com/lucthienphong1120/github-trophies.git (fetch)
+# super-upsteam  https://github.com/lucthienphong1120/github-trophies.git (push)
+# upsteam        https://github.com/ryo-ma/github-profile-trophy.git (fetch)
+# upsteam        https://github.com/ryo-ma/github-profile-trophy.git (push)
 
 # 6. 更新远端仓库的所有信息（分支、标签）
 git fetch --all
 
 # Fetching origin
-# Fetching upstream
+# Fetching upsteam
 # From https://github.com/ryo-ma/github-profile-trophy
-#  * [new branch]      VegaDeftwing-master        -> upstream/VegaDeftwing-master
-#  * [new branch]      juicyfresh                 -> upstream/juicyfresh
-#  * [new branch]      master                     -> upstream/master
-#  * [new branch]      pr-125                     -> upstream/pr-125
-#  * [new branch]      radical                    -> upstream/radical
-#  * [new branch]      spenserblack-theme/dracula -> upstream/spenserblack-theme/dracula
-# Fetching super-upstream
+#  * [new branch]      VegaDeftwing-master        -> upsteam/VegaDeftwing-master
+#  * [new branch]      juicyfresh                 -> upsteam/juicyfresh
+#  * [new branch]      master                     -> upsteam/master
+#  * [new branch]      pr-125                     -> upsteam/pr-125
+#  * [new branch]      radical                    -> upsteam/radical
+#  * [new branch]      spenserblack-theme/dracula -> upsteam/spenserblack-theme/dracula
+# Fetching super-upsteam
 # From https://github.com/lucthienphong1120/github-trophies
-#  * [new branch]      main       -> super-upstream/main
+#  * [new branch]      main       -> super-upsteam/main
 
-# 7. 执行远端合并, `git fech --all`，你可以看到remote upstream的默认分支是master
+# 7. 执行远端合并, `git fech --all`，你可以看到remote upsteam的默认分支是master
 # 如果不知道怎么找默认分支，去github repo web找：https://github.com/ryo-ma/github-profile-trophy
 # github repo web当前的分支就是默认分支
-git merge upstream/master
+git merge upsteam/master
 
-# 省略输出，此刻成功合并`upstream/master`的所有内容，无冲突
+# 省略输出，此刻成功合并`upsteam/master`的所有内容，无冲突
 ```
 
 
@@ -149,19 +148,19 @@ git merge upstream/master
 ### 多个上游仓库的特殊处理
 
 ```shell
-# 执行第二个远端分支合并，`git merge super-upstream/main`会成功吗？
-git merge super-upstream/main
+# 执行第二个远端分支合并，`git merge super-upsteam/main`会成功吗？
+git merge super-upsteam/main
 # fatal: refusing to merge unrelated histories
 # why ??
 ```
 
-因为git觉得`super-upstream/main`跟我们现在的`origin/master`的分支毫无相干，你可以理解为没有一致的“commit tree”。
-但是我们为什么可以执行`git merge upstream/master`呢？因为`origin`就是fork了`upsteam`的remote而来的。所以我们刚直接merge是有一定概率毫无冲突的。
+因为git觉得`super-upsteam/main`跟我们现在的`origin/master`的分支毫无相干，你可以理解为没有一致的“commit tree”。
+但是我们为什么可以执行`git merge upsteam/master`呢？因为`origin`就是fork了`upsteam`的remote而来的。所以我们刚直接merge是有一定概率毫无冲突的。
 
 通过[stackoverflow](https://stackoverflow.com/a/40107973)的帮助，我们继续执行。
 
 ```shell
-git pull super-upstream main --allow-unrelated-histories
+git pull super-upsteam main --allow-unrelated-histories
 # From https://github.com/lucthienphong1120/github-trophies
 #  * branch            main       -> FETCH_HEAD
 # hint: You have divergent branches and need to specify how to reconcile them.
@@ -181,7 +180,7 @@ git pull super-upstream main --allow-unrelated-histories
 # 出现这个是因为没有配置git如何处理冲突，建议使用`merge`,不建议配置成全局
 git config pull.rebase false
 
-# 再次执行`git pull super-upstream main --allow-unrelated-histories`
+# 再次执行`git pull super-upsteam main --allow-unrelated-histories`
 # 现在是
 # From https://github.com/lucthienphong1120/github-trophies
 #  * branch            main       -> FETCH_HEAD
@@ -223,7 +222,7 @@ git config pull.rebase false
 git add .
 git commit -m "chore: new branch of fork-exapmle"
 git checkout -b fork-exapmle
-git push --set-upstream origin fork-exapmle
+git push --set-upsteam origin fork-exapmle
 ```
 
 [commit log - fork-example](https://github.com/screw-hand/github-profile-trophy/commits/fork-exapmle)
@@ -237,9 +236,9 @@ git push --set-upstream origin fork-exapmle
 # 1. 获取远端信息，如果有新的变动，此次终端会输出信息
 git fetch --all
 # 2. 合并fork的上游，此时大概率需要解决冲突
-git merget upstream
+git merget upsteam
 # 3. 合并非fork的上游，仍然需要注意冲突
-git pull super-upstream main --allow-unrelated-histories
+git pull super-upsteam main --allow-unrelated-histories
 ```
 
 ### 记录上游仓库信息
@@ -306,8 +305,8 @@ git remote -v
 # origin	https://github.com/haozi/New-Bing-Anywhere.git (fetch)
 # origin	https://github.com/haozi/New-Bing-Anywhere.git (push)
 
-# 2. 将origin换成upstream
-git remote rename origin upstream
+# 2. 将origin换成upsteam
+git remote rename origin upsteam
 
 # 3. 添加fork后的remote为origin
 git remote add origin https://github.com/screw-hand/New-Bing-Anywhere.git
@@ -316,8 +315,8 @@ git remote add origin https://github.com/screw-hand/New-Bing-Anywhere.git
 git remote -v
 # origin	https://github.com/screw-hand/New-Bing-Anywhere.git (fetch)
 # origin	https://github.com/screw-hand/New-Bing-Anywhere.git (push)
-# upstream	https://github.com/haozi/New-Bing-Anywhere.git (fetch)
-# upstream	https://github.com/haozi/New-Bing-Anywhere.git (push)
+# upsteam	https://github.com/haozi/New-Bing-Anywhere.git (fetch)
+# upsteam	https://github.com/haozi/New-Bing-Anywhere.git (push)
 
 # 5. 获取远端分支
 git fetch --all
@@ -334,7 +333,7 @@ git fetch --all
 git checkout -b pr-example
 
 # 2. 推送到指定分支
-git push --set-upstream origin pr-example
+git push --set-upsteam origin pr-example
 
 # 3. 删除之前commit的main分支
 git branch -D main
@@ -351,7 +350,7 @@ git checkout -b main origin/main
 ## clone上游仓库后，创建自己的repo
 
 这是一种比
-[如何将fork类型仓库转成自己的仓库](#如何将fork类型仓库转成自己的仓库)、[#fork之前clone上游仓库并commit了，怎么提pr](#在fork之前clone上游仓库并commit了，怎么提pr)更简单的操作方式，效果是一样的。
+[如何将fork类型仓库转成自己的仓库](#如何将fork类型仓库转成自己的仓库)、 [fork之前clone上游仓库并commit了，怎么提pr](#在fork之前clone上游仓库并commit了，怎么提pr)更简单的操作方式，效果是一样的。
 
 先clone想要的[上游仓库](https://github.com/snyk-snippets/modern-npm-package],然后在github[创建自己的新repo](https://github.com/new)。
 我觉得用[GitHub CLI](https://cli.github.com/)速度更快更方便，以下实例我用会GitHub CLI，跟在github web上操作是等效的。
