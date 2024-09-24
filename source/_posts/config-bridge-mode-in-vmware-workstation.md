@@ -8,6 +8,7 @@ tags:
 1. 准备工作
    - 确保宿主机的物理网卡已启用并正常工作。
    - 确保 VMware Workstation 和虚拟机的网络驱动程序是最新的，并且与操作系统兼容。
+<!-- more -->
 
 2. 配置 VMware Workstation 的虚拟网络编辑器
    - 打开 VMware Workstation，点击 "编辑" 菜单，选择 "虚拟网络编辑器"。
