@@ -7,6 +7,7 @@
     "serve": "hexo s",
     "deploy": "hexo g -d",
     "clean": "hexo clean",
+    "new:post": "hexo new post",
     "pm2:start": "pm2 start --name blog --log ./blog.log npm -- run start",
     "pm2:stop": "pm2 stop blog",
     "pm2:restart": "pm2 restart blog",
