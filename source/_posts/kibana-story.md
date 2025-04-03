@@ -263,7 +263,7 @@ timeline
                  : 老板验收通过
 ```
 
-<!--
+<div style="display:none">
 ```mermaid
 graph TD
     title["Kibana二开任务历程"]
@@ -319,7 +319,7 @@ graph TD
     class C4,D3,D4,E2,E3,E4,E5,E6 solution
     class E7,E8,E9 end
 ```
--->
+</div>
 
 ### 协作小结
 
