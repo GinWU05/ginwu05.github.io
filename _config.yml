@@ -46,10 +46,12 @@ marked:
 relative_link: true
 future: true
 highlight:
-  enable: false
+  enable: true
   #line_number: true
   #auto_detect: false
   #tab_replace:
+  exclude_languages:
+    - mermaid
 prismjs:
   enable: true
   #line_number: true
