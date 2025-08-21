@@ -1,4 +1,4 @@
-# screw-hand
+# GinWU
 
 [![Build Status](https://app.travis-ci.com/screw-hand/screw-hand.github.io.svg?branch=hexo)](https://app.travis-ci.com/screw-hand/screw-hand.github.io)
 
