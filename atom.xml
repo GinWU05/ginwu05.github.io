@@ -6,7 +6,7 @@
   <link href="https://screw-hand.com/atom.xml" rel="self"/>
   
   <link href="https://screw-hand.com/"/>
-  <updated>2025-08-21T06:34:07.553Z</updated>
+  <updated>2025-08-22T03:13:08.467Z</updated>
   <id>https://screw-hand.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://screw-hand.com/post/kibana-story/"/>
     <id>https://screw-hand.com/post/kibana-story/</id>
     <published>2025-04-02T06:47:21.000Z</published>
-    <updated>2025-08-21T06:34:07.553Z</updated>
+    <updated>2025-08-22T03:13:08.467Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这只是一次经历分享，大家当故事听听就行，知识密度不会那么高。&lt;br&gt;不是kibana、elasticsearch的技术教程，是一个以技术主题的职场故事。&lt;br&gt;这个任务给我的印象实在是深，是技能面和人力调度最广的一次。&lt;br&gt;几年前的事情了，有些细节可能有所偏差，错误之处还请指出。&lt;/p&gt;</summary>
@@ -46,7 +46,7 @@
     <link href="https://screw-hand.com/post/why-rss/"/>
     <id>https://screw-hand.com/post/why-rss/</id>
     <published>2024-09-24T06:16:19.000Z</published>
-    <updated>2025-08-21T06:34:07.559Z</updated>
+    <updated>2025-08-22T03:13:08.490Z</updated>
     
     
     <summary type="html">&lt;p&gt;我是一位RSS的狂热爱好者。 这是一篇思路贴，记录个人对rss使用的一些思考，希望大家能愉快舒适使用RSS，爱上RSS。&lt;/p&gt;
@@ -64,7 +64,7 @@
     <link href="https://screw-hand.com/post/config-bridge-mode-in-vmware-workstation/"/>
     <id>https://screw-hand.com/post/config-bridge-mode-in-vmware-workstation/</id>
     <published>2024-06-13T02:45:50.000Z</published>
-    <updated>2025-08-21T06:34:07.552Z</updated>
+    <updated>2025-08-22T03:13:08.439Z</updated>
     
     
     <summary type="html">&lt;ol&gt;
@@ -87,7 +87,7 @@
     <link href="https://screw-hand.com/post/m-series-mac-2k-HiDPI/"/>
     <id>https://screw-hand.com/post/m-series-mac-2k-HiDPI/</id>
     <published>2024-03-19T06:19:06.000Z</published>
-    <updated>2025-08-21T06:34:07.555Z</updated>
+    <updated>2025-08-22T03:13:08.478Z</updated>
     
     
     <summary type="html">&lt;ul&gt;
@@ -109,7 +109,7 @@
     <link href="https://screw-hand.com/post/web-env-migrate/"/>
     <id>https://screw-hand.com/post/web-env-migrate/</id>
     <published>2024-01-29T02:29:00.000Z</published>
-    <updated>2025-08-21T06:34:07.559Z</updated>
+    <updated>2025-08-22T03:13:08.489Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;ul&gt;
@@ -133,7 +133,7 @@
     <link href="https://screw-hand.com/post/optimal-visual-effect-scaling/"/>
     <id>https://screw-hand.com/post/optimal-visual-effect-scaling/</id>
     <published>2023-10-19T15:50:00.000Z</published>
-    <updated>2025-08-21T06:34:07.558Z</updated>
+    <updated>2025-08-22T03:13:08.482Z</updated>
     
     
     <summary type="html">&lt;ul&gt;
@@ -153,7 +153,7 @@
     <link href="https://screw-hand.com/post/vscode-insiders-support-install-extension-by-web/"/>
     <id>https://screw-hand.com/post/vscode-insiders-support-install-extension-by-web/</id>
     <published>2023-08-14T08:27:43.000Z</published>
-    <updated>2025-08-21T06:34:07.558Z</updated>
+    <updated>2025-08-22T03:13:08.488Z</updated>
     
     
     <summary type="html">&lt;p&gt;mac使用vscode-insiders，无法直接在网页上直接安装扩展。&lt;/p&gt;</summary>
@@ -174,7 +174,7 @@
     <link href="https://screw-hand.com/post/ssh-config/"/>
     <id>https://screw-hand.com/post/ssh-config/</id>
     <published>2023-07-05T11:48:57.000Z</published>
-    <updated>2025-08-21T06:34:07.558Z</updated>
+    <updated>2025-08-22T03:13:08.485Z</updated>
     
     
     <summary type="html">&lt;ul&gt;
@@ -199,7 +199,7 @@
     <link href="https://screw-hand.com/post/fork-skill/"/>
     <id>https://screw-hand.com/post/fork-skill/</id>
     <published>2023-06-21T04:50:55.000Z</published>
-    <updated>2025-08-21T06:34:07.552Z</updated>
+    <updated>2025-08-22T03:13:08.448Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;进阶fork技巧，对初学者不是那么友好，建议拥有以下前置技能：&lt;/p&gt;
@@ -227,7 +227,7 @@
     <link href="https://screw-hand.com/post/apt-vs-apt-get/"/>
     <id>https://screw-hand.com/post/apt-vs-apt-get/</id>
     <published>2023-06-20T03:52:03.000Z</published>
-    <updated>2025-08-21T06:34:07.552Z</updated>
+    <updated>2025-08-22T03:13:08.437Z</updated>
     
     
     <summary type="html">&lt;p&gt;apt和apt-get都是Ubuntu的包管理工具，在较新的系统推荐用apt，apt比apt-get更新，后者的兼容性会更好。apt也会让其依赖项一起升级。&lt;/p&gt;</summary>
@@ -248,7 +248,7 @@
     <link href="https://screw-hand.com/post/hope/"/>
     <id>https://screw-hand.com/post/hope/</id>
     <published>2022-08-22T10:22:11.000Z</published>
-    <updated>2025-08-21T06:34:03.731Z</updated>
+    <updated>2025-08-22T03:13:08.457Z</updated>
     
     
     <summary type="html">&lt;p&gt;很多时候我都很好奇别人想法，比如朋友的理想生活到底是怎样的。所以给最珍贵的朋友做了一次人间采访，我想知道，脱离了现实的客观条件，朋友们希望过上一种什么样的生活。&lt;/p&gt;
@@ -269,7 +269,7 @@
     <link href="https://screw-hand.com/post/antd-source/"/>
     <id>https://screw-hand.com/post/antd-source/</id>
     <published>2022-08-02T07:47:16.000Z</published>
-    <updated>2025-08-21T06:34:03.657Z</updated>
+    <updated>2025-08-22T03:13:08.363Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;导读&quot;&gt;&lt;a href=&quot;#导读&quot; class=&quot;headerlink&quot; title=&quot;导读&quot;&gt;&lt;/a&gt;导读&lt;/h1&gt;&lt;p&gt;github上面有一些很“哇塞”的项目，在工作中呢，我们只是作为“使用者”的角色，去把这些开源项目应用在项目中。&lt;br&gt;看着官网提供的资料，了解了这是什么、这怎么安装、这怎么使用、这有什么东西……&lt;br&gt;这很常见，从使用者的角度上看，甚至社区上的项目写得好不好跟我们关系也不大。&lt;br&gt;“能用就用，不能用就换一个，反正有很多选择”，这是很多人使用者的态度。&lt;br&gt;这当然没问题。&lt;br&gt;不过作为研发人员，我们可以不止步于此，可以进一步深入了解他们的项目代码。&lt;br&gt;毕竟作者都开源了，肯定是希望社区上的用户能对他们的代码有更多的了解。&lt;br&gt;开源给了所有技术人员一个机会——了解其他优秀开发者的项目机会。&lt;br&gt;遗憾的是大部分开发者都不具备去独立分析一个开源项目的方法。&lt;br&gt;看到优秀的项目代码，常常没办法搞懂整体设计、功能代码，想了解其实现也望而止步。&lt;/p&gt;
@@ -285,7 +285,7 @@
     <link href="https://screw-hand.com/post/%E3%80%8AJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89%E3%80%8B/"/>
     <id>https://screw-hand.com/post/%E3%80%8AJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89%E3%80%8B/</id>
     <published>2022-03-20T12:37:34.000Z</published>
-    <updated>2025-08-21T06:34:03.750Z</updated>
+    <updated>2025-08-22T03:13:08.490Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;JavaScript高级程序设计（第4版）&lt;/strong&gt;&lt;/p&gt;
@@ -305,7 +305,7 @@
     <link href="https://screw-hand.com/post/webpack5/"/>
     <id>https://screw-hand.com/post/webpack5/</id>
     <published>2022-03-12T14:20:48.000Z</published>
-    <updated>2025-08-21T06:34:03.749Z</updated>
+    <updated>2025-08-22T03:13:08.489Z</updated>
     
     
     <summary type="html">&lt;p&gt;简介：本质上，&lt;strong&gt;webpack&lt;/strong&gt; 是一个用于现代 JavaScript 应用程序的 &lt;em&gt;静态模块打包工具&lt;/em&gt;。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 &lt;a href=&quot;https://webpack.docschina.org/concepts/dependency-graph/&quot;&gt;依赖图(dependency graph)&lt;/a&gt;，然后将你项目中所需的每一个模块组合成一个或多个 &lt;em&gt;bundles&lt;/em&gt;，它们均为静态资源，用于展示你的内容。&lt;/p&gt;</summary>
@@ -324,7 +324,7 @@
     <link href="https://screw-hand.com/post/code-style/"/>
     <id>https://screw-hand.com/post/code-style/</id>
     <published>2021-12-27T09:10:18.000Z</published>
-    <updated>2025-08-21T06:34:03.717Z</updated>
+    <updated>2025-08-22T03:13:08.437Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;ul&gt;
@@ -349,7 +349,7 @@
     <link href="https://screw-hand.com/post/cors-proxy/"/>
     <id>https://screw-hand.com/post/cors-proxy/</id>
     <published>2021-07-17T01:54:08.000Z</published>
-    <updated>2025-08-21T06:34:03.721Z</updated>
+    <updated>2025-08-22T03:13:08.443Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如今主流开发模式&lt;strong&gt;前后端分离&lt;/strong&gt;已是普遍的开发模式，相对于传统的前后端耦合，前后端各拥有自己的一套开发环境。开发完成后，又一起部署到是测试&amp;#x2F;线上环境。&lt;/p&gt;
@@ -366,7 +366,7 @@
     <link href="https://screw-hand.com/post/file/"/>
     <id>https://screw-hand.com/post/file/</id>
     <published>2021-01-30T07:37:05.000Z</published>
-    <updated>2025-08-21T06:34:03.722Z</updated>
+    <updated>2025-08-22T03:13:08.444Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;浏览器&amp;#x2F;服务器如何生成、下载与上传文件，以及js的文件处理。&lt;/p&gt;</summary>
@@ -381,7 +381,7 @@
     <link href="https://screw-hand.com/post/image/"/>
     <id>https://screw-hand.com/post/image/</id>
     <published>2020-11-06T10:48:40.000Z</published>
-    <updated>2025-08-21T06:34:03.735Z</updated>
+    <updated>2025-08-22T03:13:08.462Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;浏览器中引用图片是一种很常见的情况，使用方式的不同，他们的意义也不同。比如————作为“内容主体”、“背景”、“图标”等，而设计师有时候也会提供不同的格式图片（img&amp;#x2F;png&amp;#x2F;svg&amp;#x2F;）。在不同的场景，我们对同一份图片素材，要根据图片在web界面中的意义合理运用。个人会列举浏览器常用使用图片的方式。&lt;/p&gt;
@@ -406,7 +406,7 @@
     <link href="https://screw-hand.com/post/async-to-call-async-request-foreach/"/>
     <id>https://screw-hand.com/post/async-to-call-async-request-foreach/</id>
     <published>2020-10-06T03:11:50.000Z</published>
-    <updated>2025-08-21T06:34:03.716Z</updated>
+    <updated>2025-08-22T03:13:08.437Z</updated>
     
     
     <summary type="html">&lt;p&gt;业务场景：一次性发送多个http请求，并且这些请求有&lt;strong&gt;先后顺序&lt;/strong&gt;之分。&lt;/p&gt;</summary>
@@ -425,7 +425,7 @@
     <link href="https://screw-hand.com/post/vue-ecosystem/"/>
     <id>https://screw-hand.com/post/vue-ecosystem/</id>
     <published>2020-02-05T15:22:39.000Z</published>
-    <updated>2025-08-21T06:34:03.748Z</updated>
+    <updated>2025-08-22T03:13:08.488Z</updated>
     
     
     <summary type="html">&lt;p&gt;这是一次资料整理，关于vue的生态圈。包括工具、插件，这里不按照库的类型分类。&lt;/p&gt;
