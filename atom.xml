@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>螺丝手</title>
+  
+  
+  <link href="https://screw-hand.com/atom.xml" rel="self"/>
+  
+  <link href="https://screw-hand.com/"/>
+  <updated>2025-08-21T06:34:07.553Z</updated>
+  <id>https://screw-hand.com/</id>
+  
+  <author>
+    <name>screw-hand</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次kibana二开经历</title>
+    <link href="https://screw-hand.com/post/kibana-story/"/>
+    <id>https://screw-hand.com/post/kibana-story/</id>
+    <published>2025-04-02T06:47:21.000Z</published>
+    <updated>2025-08-21T06:34:07.553Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;这只是一次经历分享，大家当故事听听就行，知识密度不会那么高。&lt;br&gt;不是kibana、elasticsearch的技术教程，是一个以技术主题的职场故事。&lt;br&gt;这个任务给我的印象实在是深，是技能面和人力调度最广的一次。&lt;br&gt;几年前的事情了，有些细节可能有所偏差，错误之处还请指出。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://screw-hand.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="前端开发" scheme="https://screw-hand.com/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Kibana" scheme="https://screw-hand.com/tags/Kibana/"/>
+    
+    <category term="二次开发" scheme="https://screw-hand.com/tags/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="经验分享" scheme="https://screw-hand.com/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>why-rss</title>
+    <link href="https://screw-hand.com/post/why-rss/"/>
+    <id>https://screw-hand.com/post/why-rss/</id>
+    <published>2024-09-24T06:16:19.000Z</published>
+    <updated>2025-08-21T06:34:07.559Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我是一位RSS的狂热爱好者。 这是一篇思路贴，记录个人对rss使用的一些思考，希望大家能愉快舒适使用RSS，爱上RSS。&lt;/p&gt;
+&lt;p&gt;这篇文章适合有RSS使用经验的读者。新手可能不会找到入门教程，但无论你的熟练程度如何，这里的见解都可能为你的RSS使用技巧带来启发提升。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="RSS" scheme="https://screw-hand.com/tags/RSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在 VMware Workstation 中配置桥接模式</title>
+    <link href="https://screw-hand.com/post/config-bridge-mode-in-vmware-workstation/"/>
+    <id>https://screw-hand.com/post/config-bridge-mode-in-vmware-workstation/</id>
+    <published>2024-06-13T02:45:50.000Z</published>
+    <updated>2025-08-21T06:34:07.552Z</updated>
+    
+    
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;准备工作&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;确保宿主机的物理网卡已启用并正常工作。&lt;/li&gt;
+&lt;li&gt;确保 VMware Workstation 和虚拟机的网络驱动程序是最新的，并且与操作系统兼容。</summary>
+    
+    
+    
+    <category term="DevOps" scheme="https://screw-hand.com/categories/DevOps/"/>
+    
+    
+    <category term="linux" scheme="https://screw-hand.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>M系mac设置2k外接显示器使用HiDPI</title>
+    <link href="https://screw-hand.com/post/m-series-mac-2k-HiDPI/"/>
+    <id>https://screw-hand.com/post/m-series-mac-2k-HiDPI/</id>
+    <published>2024-03-19T06:19:06.000Z</published>
+    <updated>2025-08-21T06:34:07.555Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;原生系统支持&lt;/li&gt;
+&lt;li&gt;BetterDummy(BetterDisplay)&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="geek" scheme="https://screw-hand.com/categories/geek/"/>
+    
+    
+    <category term="mac" scheme="https://screw-hand.com/tags/mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web应用的服务器环境迁移</title>
+    <link href="https://screw-hand.com/post/web-env-migrate/"/>
+    <id>https://screw-hand.com/post/web-env-migrate/</id>
+    <published>2024-01-29T02:29:00.000Z</published>
+    <updated>2025-08-21T06:34:07.559Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;单体Web应用部署在云服务提供商上。&lt;/li&gt;
+&lt;li&gt;用户通过域名访问该应用。&lt;/li&gt;
+&lt;li&gt;计划将应用从一个云服务器（A）迁移到另一个（B），使用Docker进行部署。&lt;/li&gt;
+&lt;li&gt;迁移的目标是让用户无感知这一变更。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="DevOps" scheme="https://screw-hand.com/categories/DevOps/"/>
+    
+    
+    <category term="env" scheme="https://screw-hand.com/tags/env/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>缩放倍率设置达到最佳视觉效果</title>
+    <link href="https://screw-hand.com/post/optimal-visual-effect-scaling/"/>
+    <id>https://screw-hand.com/post/optimal-visual-effect-scaling/</id>
+    <published>2023-10-19T15:50:00.000Z</published>
+    <updated>2025-08-21T06:34:07.558Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;计算dpi/ppi&lt;/li&gt;
+&lt;li&gt;最佳缩放倍率&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="geek" scheme="https://screw-hand.com/categories/geek/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何让mac的vscode-insiders支持在web上直接安装扩展</title>
+    <link href="https://screw-hand.com/post/vscode-insiders-support-install-extension-by-web/"/>
+    <id>https://screw-hand.com/post/vscode-insiders-support-install-extension-by-web/</id>
+    <published>2023-08-14T08:27:43.000Z</published>
+    <updated>2025-08-21T06:34:07.558Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;mac使用vscode-insiders，无法直接在网页上直接安装扩展。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="geek" scheme="https://screw-hand.com/categories/geek/"/>
+    
+    
+    <category term="mac" scheme="https://screw-hand.com/tags/mac/"/>
+    
+    <category term="vscode" scheme="https://screw-hand.com/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh配置</title>
+    <link href="https://screw-hand.com/post/ssh-config/"/>
+    <id>https://screw-hand.com/post/ssh-config/</id>
+    <published>2023-07-05T11:48:57.000Z</published>
+    <updated>2025-08-21T06:34:07.558Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;多个账号配置ssh key&lt;/li&gt;
+&lt;li&gt;ssh免密码登录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="cli" scheme="https://screw-hand.com/categories/cli/"/>
+    
+    
+    <category term="cli" scheme="https://screw-hand.com/tags/cli/"/>
+    
+    <category term="ssh" scheme="https://screw-hand.com/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github中的fork技巧</title>
+    <link href="https://screw-hand.com/post/fork-skill/"/>
+    <id>https://screw-hand.com/post/fork-skill/</id>
+    <published>2023-06-21T04:50:55.000Z</published>
+    <updated>2025-08-21T06:34:07.552Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;进阶fork技巧，对初学者不是那么友好，建议拥有以下前置技能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用过github的fork&amp;#x2F;pr操作&lt;/li&gt;
+&lt;li&gt;熟悉使用git命令的多个分支，多个远端操作&lt;/li&gt;
+&lt;li&gt;熟练使用git处理合并分支冲突&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;各个大标题内容独立，可根据自己需求跳读:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何将fork类型仓库转成自己的仓库&lt;/li&gt;
+&lt;li&gt;如何同步多个上游仓库&lt;/li&gt;
+&lt;li&gt;在fork之前clone上游仓库并commit了，怎么提pr&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="github" scheme="https://screw-hand.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>apt vs apt-get</title>
+    <link href="https://screw-hand.com/post/apt-vs-apt-get/"/>
+    <id>https://screw-hand.com/post/apt-vs-apt-get/</id>
+    <published>2023-06-20T03:52:03.000Z</published>
+    <updated>2025-08-21T06:34:07.552Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;apt和apt-get都是Ubuntu的包管理工具，在较新的系统推荐用apt，apt比apt-get更新，后者的兼容性会更好。apt也会让其依赖项一起升级。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="geek" scheme="https://screw-hand.com/categories/geek/"/>
+    
+    
+    <category term="linux" scheme="https://screw-hand.com/tags/linux/"/>
+    
+    <category term="ubuntu" scheme="https://screw-hand.com/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你的理想生活</title>
+    <link href="https://screw-hand.com/post/hope/"/>
+    <id>https://screw-hand.com/post/hope/</id>
+    <published>2022-08-22T10:22:11.000Z</published>
+    <updated>2025-08-21T06:34:03.731Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;很多时候我都很好奇别人想法，比如朋友的理想生活到底是怎样的。所以给最珍贵的朋友做了一次人间采访，我想知道，脱离了现实的客观条件，朋友们希望过上一种什么样的生活。&lt;/p&gt;
+&lt;p&gt;以下回答来自不同的朋友，不同的时间，或者想法会进化或者放弃。但是仍然希望，所有人都记得有某一个人，曾经有这么一个理想过。&lt;/p&gt;
+&lt;p&gt;因为说出自己的真实想法太过羞耻，很多人并不一定喜欢自我暴露，所有的回答都是采用匿名机制，只保留日期，如果找不到自己的回答，那也说明这个理想生活也不属于你了。&lt;/p&gt;
+&lt;p&gt;或许某一天，当你迷失了方向，会重新回来这里，寻找你最初的想法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“你的理想生活是什么，无视所有客观条件?”&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="人间采访" scheme="https://screw-hand.com/tags/%E4%BA%BA%E9%97%B4%E9%87%87%E8%AE%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>antd源码浅析</title>
+    <link href="https://screw-hand.com/post/antd-source/"/>
+    <id>https://screw-hand.com/post/antd-source/</id>
+    <published>2022-08-02T07:47:16.000Z</published>
+    <updated>2025-08-21T06:34:03.657Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;导读&quot;&gt;&lt;a href=&quot;#导读&quot; class=&quot;headerlink&quot; title=&quot;导读&quot;&gt;&lt;/a&gt;导读&lt;/h1&gt;&lt;p&gt;github上面有一些很“哇塞”的项目，在工作中呢，我们只是作为“使用者”的角色，去把这些开源项目应用在项目中。&lt;br&gt;看着官网提供的资料，了解了这是什么、这怎么安装、这怎么使用、这有什么东西……&lt;br&gt;这很常见，从使用者的角度上看，甚至社区上的项目写得好不好跟我们关系也不大。&lt;br&gt;“能用就用，不能用就换一个，反正有很多选择”，这是很多人使用者的态度。&lt;br&gt;这当然没问题。&lt;br&gt;不过作为研发人员，我们可以不止步于此，可以进一步深入了解他们的项目代码。&lt;br&gt;毕竟作者都开源了，肯定是希望社区上的用户能对他们的代码有更多的了解。&lt;br&gt;开源给了所有技术人员一个机会——了解其他优秀开发者的项目机会。&lt;br&gt;遗憾的是大部分开发者都不具备去独立分析一个开源项目的方法。&lt;br&gt;看到优秀的项目代码，常常没办法搞懂整体设计、功能代码，想了解其实现也望而止步。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这是一个系列，以Ant Design UI（react）为示例，一起学习如何分析一个开源项目。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《JavaScript高级程序设计（第4版）》的笔记</title>
+    <link href="https://screw-hand.com/post/%E3%80%8AJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89%E3%80%8B/"/>
+    <id>https://screw-hand.com/post/%E3%80%8AJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89%E3%80%8B/</id>
+    <published>2022-03-20T12:37:34.000Z</published>
+    <updated>2025-08-21T06:34:03.750Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;JavaScript高级程序设计（第4版）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;马特·弗里斯比&lt;br&gt;278个想法&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="js" scheme="https://screw-hand.com/categories/js/"/>
+    
+    
+    <category term="js 读书笔记" scheme="https://screw-hand.com/tags/js-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack5</title>
+    <link href="https://screw-hand.com/post/webpack5/"/>
+    <id>https://screw-hand.com/post/webpack5/</id>
+    <published>2022-03-12T14:20:48.000Z</published>
+    <updated>2025-08-21T06:34:03.749Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;简介：本质上，&lt;strong&gt;webpack&lt;/strong&gt; 是一个用于现代 JavaScript 应用程序的 &lt;em&gt;静态模块打包工具&lt;/em&gt;。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 &lt;a href=&quot;https://webpack.docschina.org/concepts/dependency-graph/&quot;&gt;依赖图(dependency graph)&lt;/a&gt;，然后将你项目中所需的每一个模块组合成一个或多个 &lt;em&gt;bundles&lt;/em&gt;，它们均为静态资源，用于展示你的内容。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工程化" scheme="https://screw-hand.com/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+    <category term="webpack" scheme="https://screw-hand.com/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码规范整改的项目实践</title>
+    <link href="https://screw-hand.com/post/code-style/"/>
+    <id>https://screw-hand.com/post/code-style/</id>
+    <published>2021-12-27T09:10:18.000Z</published>
+    <updated>2025-08-21T06:34:03.717Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;痛点: 项目的代码写得太乱了，风格不统一。团队成员的编辑器格式化设置也不一样，经常在提交记录出现大量的格式化代码风格修改，影响日志追溯。&lt;/li&gt;
+&lt;li&gt;动机：npm script(prettier)似乎不起作用，虽然有 git hooks，项目也没有安装 eslint，也缺少 stylelint。&lt;/li&gt;
+&lt;li&gt;预期：团队统一代码风格，统一设置好编辑器，安装必要的编辑器插件，尽量用工具去自动整理代码&lt;/li&gt;
+&lt;li&gt;原则：让工具去管理规范，配置好相应的工具就行，让开发者少操心格式问题，把精力多放点在代码的实现&lt;/li&gt;
+&lt;li&gt;结果：预期想法基本满足。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="工程化" scheme="https://screw-hand.com/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+    <category term="规范" scheme="https://screw-hand.com/tags/%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用代理解决跨域问题</title>
+    <link href="https://screw-hand.com/post/cors-proxy/"/>
+    <id>https://screw-hand.com/post/cors-proxy/</id>
+    <published>2021-07-17T01:54:08.000Z</published>
+    <updated>2025-08-21T06:34:03.721Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如今主流开发模式&lt;strong&gt;前后端分离&lt;/strong&gt;已是普遍的开发模式，相对于传统的前后端耦合，前后端各拥有自己的一套开发环境。开发完成后，又一起部署到是测试&amp;#x2F;线上环境。&lt;/p&gt;
+&lt;p&gt;因为后端的API服务并不部署在前端的开发环境上，所以在开发时，经常会遇到需要跨域的场景；即便是部署到测试&amp;#x2F;线上环境，也不一定是部署到同一台服务器（单体、集群式服务）。&lt;/p&gt;
+&lt;p&gt;内容：介绍跨域、同源策略的基本概念；收跨域影响的场景；常用的跨域方案、代理；反向代理、正向代理；开发、线上环境配置代理。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器下载与上传文件</title>
+    <link href="https://screw-hand.com/post/file/"/>
+    <id>https://screw-hand.com/post/file/</id>
+    <published>2021-01-30T07:37:05.000Z</published>
+    <updated>2025-08-21T06:34:03.722Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;浏览器&amp;#x2F;服务器如何生成、下载与上传文件，以及js的文件处理。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器图片机制</title>
+    <link href="https://screw-hand.com/post/image/"/>
+    <id>https://screw-hand.com/post/image/</id>
+    <published>2020-11-06T10:48:40.000Z</published>
+    <updated>2025-08-21T06:34:03.735Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;浏览器中引用图片是一种很常见的情况，使用方式的不同，他们的意义也不同。比如————作为“内容主体”、“背景”、“图标”等，而设计师有时候也会提供不同的格式图片（img&amp;#x2F;png&amp;#x2F;svg&amp;#x2F;）。在不同的场景，我们对同一份图片素材，要根据图片在web界面中的意义合理运用。个人会列举浏览器常用使用图片的方式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;img&lt;/li&gt;
+&lt;li&gt;background-image&lt;/li&gt;
+&lt;li&gt;icon-font&lt;/li&gt;
+&lt;li&gt;svg&lt;/li&gt;
+&lt;li&gt;webpack 与 img&lt;/li&gt;
+&lt;li&gt;base64&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="web" scheme="https://screw-hand.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>同步遍历调用异步请求</title>
+    <link href="https://screw-hand.com/post/async-to-call-async-request-foreach/"/>
+    <id>https://screw-hand.com/post/async-to-call-async-request-foreach/</id>
+    <published>2020-10-06T03:11:50.000Z</published>
+    <updated>2025-08-21T06:34:03.716Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;业务场景：一次性发送多个http请求，并且这些请求有&lt;strong&gt;先后顺序&lt;/strong&gt;之分。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="js" scheme="https://screw-hand.com/categories/js/"/>
+    
+    
+    <category term="js" scheme="https://screw-hand.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue生态圈</title>
+    <link href="https://screw-hand.com/post/vue-ecosystem/"/>
+    <id>https://screw-hand.com/post/vue-ecosystem/</id>
+    <published>2020-02-05T15:22:39.000Z</published>
+    <updated>2025-08-21T06:34:03.748Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这是一次资料整理，关于vue的生态圈。包括工具、插件，这里不按照库的类型分类。&lt;/p&gt;
+&lt;p&gt;思维导图体现的是&lt;strong&gt;这些库由什么原理实现，或者说深入了解库会接触到的一些关键点。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;官方也整理了&lt;a href=&quot;https://github.com/vuejs/vue#ecosystem&quot;&gt;生态圈&lt;/a&gt;，不过&lt;a href=&quot;https://github.com/vuejs/vue/commit/4504cafa8dcece12538c8be4ae84fb93afcdafed#diff-04c6e90faac2675aa89e2176d2eec7d8R144-R18://github.com/vuejs/vue/commit/4504cafa8dcece12538c8be4ae84fb93afcdafed#diff-04c6e90faac2675aa89e2176d2eec7d8R144-R182&quot;&gt;修改记录&lt;/a&gt;是两年前。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="vue" scheme="https://screw-hand.com/tags/vue/"/>
+    
+  </entry>
+  
+</feed>

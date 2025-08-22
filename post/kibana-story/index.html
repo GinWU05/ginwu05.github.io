@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"screw-hand.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"default","style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言这只是一次经历分享，大家当故事听听就行，知识密度不会那么高。不是kibana、elasticsearch的技术教程，是一个以技术主题的职场故事。这个任务给我的印象实在是深，是技能面和人力调度最广的一次。几年前的事情了，有些细节可能有所偏差，错误之处还请指出。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次kibana二开经历">
+<meta property="og:url" content="https://screw-hand.com/post/kibana-story/index.html">
+<meta property="og:site_name" content="螺丝手">
+<meta property="og:description" content="前言这只是一次经历分享，大家当故事听听就行，知识密度不会那么高。不是kibana、elasticsearch的技术教程，是一个以技术主题的职场故事。这个任务给我的印象实在是深，是技能面和人力调度最广的一次。几年前的事情了，有些细节可能有所偏差，错误之处还请指出。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.elastic.co/guide/en/kibana/7.17/images/analytics-home-page.png">
+<meta property="og:image" content="https://screw-hand.com/post/kibana-story/step.png">
+<meta property="og:image" content="https://screw-hand.com/post/kibana-story/help.png">
+<meta property="article:published_time" content="2025-04-02T06:47:21.000Z">
+<meta property="article:modified_time" content="2025-08-21T06:34:07.553Z">
+<meta property="article:author" content="screw-hand">
+<meta property="article:tag" content="Kibana">
+<meta property="article:tag" content="二次开发">
+<meta property="article:tag" content="经验分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.elastic.co/guide/en/kibana/7.17/images/analytics-home-page.png">
+
+
+<link rel="canonical" href="https://screw-hand.com/post/kibana-story/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://screw-hand.com/post/kibana-story/","path":"/post/kibana-story/","title":"记一次kibana二开经历"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>记一次kibana二开经历 | 螺丝手</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="螺丝手" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">螺丝手</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%B7%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">起步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">创建实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B5%E9%9D%A2"><span class="nav-number">5.</span> <span class="nav-text">配置页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F%E6%94%B9%E9%80%A0"><span class="nav-number">6.</span> <span class="nav-text">样式改造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91"><span class="nav-number">7.</span> <span class="nav-text">二次开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE%E8%BF%87%E7%A8%8B"><span class="nav-number">8.</span> <span class="nav-text">回顾过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E4%BD%9C%E5%B0%8F%E7%BB%93"><span class="nav-number">9.</span> <span class="nav-text">协作小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%80%83"><span class="nav-number">10.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="nav-number">11.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="screw-hand"
+      src="/avatar.jpg">
+  <p class="site-author-name" itemprop="name">screw-hand</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/screw-hand" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;screw-hand" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:screwhand0@gmail.com" title="E-Mail → mailto:screwhand0@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://screw-hand.com/post/kibana-story/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatar.jpg">
+      <meta itemprop="name" content="screw-hand">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="螺丝手">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="记一次kibana二开经历 | 螺丝手">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          记一次kibana二开经历
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-02 14:47:21" itemprop="dateCreated datePublished" datetime="2025-04-02T14:47:21+08:00">2025-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-08-21 14:34:07" itemprop="dateModified" datetime="2025-08-21T14:34:07+08:00">2025-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">前端开发</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/post/kibana-story/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/post/kibana-story/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.3k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这只是一次经历分享，大家当故事听听就行，知识密度不会那么高。<br>不是kibana、elasticsearch的技术教程，是一个以技术主题的职场故事。<br>这个任务给我的印象实在是深，是技能面和人力调度最广的一次。<br>几年前的事情了，有些细节可能有所偏差，错误之处还请指出。</p>
+<span id="more"></span>
+
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2021年，我是工龄2.5年的前端开发，公司卖网络安全产品给其他公司客户。彼时已经是第二条产品线了，前端还是做后台管理web(react+umi)。<br>基层研发团队完整，高级研发人员有：创始人（老板，架构师级别），技术总监(公司技术天花板)，部门老大（团队负责人，网络安全专家）。<br>公司有自己维护的机房，使用VMware vSphere虚拟化技术灵活分配服务器系统资源，给整个研发团队使用，由运维同事管理。<br>至少3个项目环境：开发、测试、生产。</p>
+<p>那天，PM(产品经理)找我：我们要把kibana的界面，嵌入到我们的后台管理。</p>
+<p>我：…（短暂的思考） 为啥？ 意义是什么？ 谁做的技术选型？</p>
+<p>PM: 老板决定的，因为我们现在的产品数据读写性能太差了，数据库要换成elasticsearch；然后老板也不希望前端再自己手动写界面，直接用kibana的界面就行了。</p>
+<p>内心os：从要解决的痛点分析，kibana 不一定是一个好的方案，但这是老板的决定，我似乎没办法拿出一个更好的方案。我可以做，但效益不一定有预期那么好。</p>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><p>好的，任务明确，部门前端两个，我自己工龄不如同事高，他做事情比较稳，但我更喜欢研究折腾玩一些新玩意。我愿意做这个任务，跟同事简单讨论，他表示ok。<br>开干呗，但我不知道啥是kibana、elasticsearch，肯定得先查资料，看文档，先简单了解一下。</p>
+<pre class="line-numbers language-none"><code class="language-none">Kibana 是一个强大的数据分析和可视化工具，它允许用户通过 ES|QL 进行数据查询和分析，支持多种数据源和类型，提供了一系列的特性和工具来加速数据洞察、解决问题、监控系统、进行安全检查以及提升搜索引活性。
+---
+Elasticsearch 是一个开源的分布式 RESTful 搜索和分析引擎，它不仅是 Elastic Stack 的核心，而且是一个高性能数据存储和向量基数据库，能够满足各种使用场景的需求，包括 AI 搜索和分析。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>emm… 要我自己讲，kibana是运维日志面板工具，可以展示来自Elasticsearch的数据；Elasticsearch是一个快速搜数据的引擎，类似数据库能存存储和查询数据。</p>
+<p>叠甲：这是一个简单粗暴的理解，对于陌生的概念工具，这样理解可以快速上手。</p>
+<p><strong>预期实现效果：自家产品的后台管理web，嵌入kibana页面，kibana是连接了Elasticsearch实例。</strong></p>
+<p>方向也明确，嵌入可以用html的<code>iframe</code>技术；但kibana页面，需要其服务实例，我可以看文档资料，自己搭起来；<br>如何连接Elasticsearch实例，这需要跟后端要一下，但我也最好提供配置文件，需要啥值让后端直接告诉我，这样他们比较省事。</p>
+<p>跟PM，部门老大沟通了一下，这个任务没那么简单，我不好预估时间，而且这些都是新概念，我需要一些时间成本学习。而且个人认为，就算实现了老板的想法，效果不一定有老板预期那么理想。<br>但老板在公司有完全的决策权，我不会反驳他。还是会按照他的想法，去推动任务。你知道这个风险还有我的意见就行。</p>
+<p>PM:放心去做就行。</p>
+<p>能行，开搞。</p>
+<h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/kibana/7.17/docker.html#run-kibana-on-docker-for-dev">Install Kibana with Docker</a></p>
+<p>我玩过服务器还有docker，跑个kibana实例并不难。直接在产品的测试环境服务器（虚拟机）执行吧。预估我后面的操作，都是可以撤回且不影响产品的测试环境。<br>连接Elasticsearch实例，需要配置<code>ELASTICSEARCH_HOSTS</code>的值，直接带着文档资料， 找后端同事让其提供就行。</p>
+<p>就这样顺利有了kibana实例，也连接了Elasticsearch实例。工作电脑能访问产品的测试环境。</p>
+<p><img src="https://www.elastic.co/guide/en/kibana/7.17/images/analytics-home-page.png" alt="kibana首页参考"></p>
+<p>歪头… 我搞这个实例，是需要搞页面，嵌入到自家产品的后台管理web。<br>但我现在得到了一个管理平台。如果老板的选型没问题，我应该是可以借助管理平台，配置出页面。<br>老板既然这么提了，估计是已经看过实际案例，我不需要质疑他，继续往下推动就完事。</p>
+<h2 id="配置页面"><a href="#配置页面" class="headerlink" title="配置页面"></a>配置页面</h2><p>继续翻文档，了解kibana的概念，得出我需要的”零件”，组装成页面：</p>
+<ul>
+<li>配置索引模式（Index Pattern）</li>
+<li>使用 Discover 查看数据</li>
+<li>创建可视化图表（Visualizations）</li>
+<li>创建仪表板（Dashboard）</li>
+<li>构建仪表盘（Dashboard）</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/kibana/7.17/introduction.html#visualize-and-analyze">visualize-and-analyze</a></p>
+<p>所以，可视化图表（Visualizations）就是页面的组成元素，仪表盘（Dashboard）就是页面。</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/kibana/7.17/reporting-getting-started.html#share-a-direct-link">share-a-direct-link</a></p>
+<p>Dashboard可以用链接的方式分享，这是<strong>这次任务需要的kibana页面</strong>。</p>
+<p>我已经掌握配置kibana的页面了，现在需要回归需求文档，看看需要我配置出具体如何的kibana页面，展示什么数据。<br>然后用iframe引用dashboard的链接，嵌入到自家产品的后台管理web就行了。</p>
+<p>（此处省略一些我了解Elasticsearch的细节，还有产品项目的具体的业务index pattern。 也花费了不少时间，需要找后端了解我页面上的xx模块，这里的数据从哪个index pattern获取）</p>
+<p>配置出页面后，iframe嵌入也是小问题，没啥好讲的。隐约记得有跨域问题，我改过前端nginx的配置，为kibana配置了反向代理，当然请求了后端、运维同事的协助。他们在这块比较专业。</p>
+<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx"><span class="token directive"><span class="token keyword">location</span> /kibana</span> <span class="token punctuation">&#123;</span>
+    <span class="token directive"><span class="token keyword">proxy_pass</span> http://192.168.1.100:5601</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> Host <span class="token variable">$host</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Real-IP <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">proxy_set_header</span> X-Forwarded-For <span class="token variable">$proxy_add_x_forwarded_for</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>至此开发任务到这里收尾，找PM验收，然后上线就是把测试环境的东西，搬到生产环境，就完成上线了。</p>
+<h2 id="样式改造"><a href="#样式改造" class="headerlink" title="样式改造"></a>样式改造</h2><p>PM（产品经理）：老板说，我们的kibana页面太丑了。<br>我：额… 那要怎么调整。<br>PM：ui已经设计好了，你按照这个设计稿调整就行。<br>我：（打开设计稿链接，沉思了一小会…）</p>
+<p><strong>要改外部的url的样式，要么在自家产品页面，叠个样式层，直接覆盖；kibana是开源的，要么在kibana的源码上改，然后重新打包。</strong></p>
+<p>内心OS：前者技术成本小，但支持度可能有限，而且kibana在iframe中，自家产品的样式层，可能无法影响到kibana的样式；<br>后者技术成本大，但有了源码，我可以自由更改，做任何样式调整。</p>
+<p>我：改吧。我想办法。</p>
+<p>PM:加油。😉</p>
+<p>我更倾向用第一种方案，方便快速。但可能没办法完全还原设计稿。第二种方案，成本高，但样式肯定能还原。<br>优先用第一种方案，看老板的反馈，如果不行，就只能用第二种方案了。</p>
+<p>花了两三天时间，改了自家产品的样式，但效果不理想，PM反馈老板说还是丑。</p>
+<h2 id="二次开发"><a href="#二次开发" class="headerlink" title="二次开发"></a>二次开发</h2><p>没办法了，只能去碰kibana的源码了。虽然我并不想这么做。还是跟PM，部门老大讲我的技术方案，风险告知…</p>
+<p>PM、部门老大：继续加油。😉</p>
+<p><strong>写到这里，才重头戏的开始，从这里开始各卡壳，上一个问题解决了，又一直出现新的问题。</strong></p>
+<p><strong>拉repo源码，本地跑起来，改代码，打包，部署。</strong></p>
+<p>思路如此，开搞！</p>
+<p>文档提供了：<a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/kibana/7.17/development-getting-started.html">development-getting-started</a>，拉代码的时候，我才意识到源码体积2G+，第一次接触过这么大的repo。</p>
+<p>虽然一般项目是直接使用包管理器安装开发依赖，但文档让我用<code>yarn kbn bootstrap</code>的命令，简单翻阅了一下，是用node执行一些脚本，他们这样做肯定有原因，不去深入了解为什么，就这样跑吧。</p>
+<p>kibana的项目太大了，安装依赖也很久，中间也报过一些依赖版本问题，还有外网资源下载慢的问题，也通过代理解决了。</p>
+<p>本地正常运行后，我不着急写代码。先第一时间编译、部署一下。之前吃过没第一时间部署的亏，代码也改了一大堆，没办法快速定位是自己改的代码问题，还是项目的起点时候的问题。</p>
+<p>编译的时候，也让我发懵，当时的设备是i7的u，性能并不低，但编译的时候，u拉到100%了，整个设备完全卡死无法操作，等了10分钟才行。</p>
+<p>看来，我需要一台性能更好的设备。</p>
+<p>稍微思考后，vscode支持<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh-tutorial">remote ssh</a>功能。vim我也比较熟悉。<br>我可以用x-shell、vscode等工具，连接公司的服务器，在服务器直接写代码开发。果断找CTO反馈这个问题。</p>
+<p>我：(简单说明了情况) 似乎我没办法在本地开发，是否建议在公司的服务器上直接开发？</p>
+<p>CTO：行。</p>
+<p>我：那我找运维同事帮我提供一个虚拟机系统。</p>
+<p>CTO: 可以。</p>
+<p><strong>到这里，也就是说… 我二开的这个任务，前面的做的完全都白费了。还得在服务器上重新搞。</strong></p>
+<p>小插曲：偶然跟老板搭上话闲聊（毕竟大家工作时间都挺忙的，而且也不一定有心情聊天）<br>老板说：当时我以为kibana是后端搞的，没想到CTO说这个是前端的活。<br>我回了一个微笑：没事，我来搞定就行。<br>内心OS：管他什么后端前端的，能解决问题就行。</p>
+<p>继续在开发环境的服务器重复之前的步骤：</p>
+<ul>
+<li>拉repo源码</li>
+<li>本地跑起来</li>
+<li>编译、部署</li>
+</ul>
+<p>能正常部署后，我就可以开始写代码了。没时间、没心情去研究kibana的每个模块，简单扫了几眼大致结构和模块。<br>发现一个有意思的点：这项目同时用了react、angular, 说实话同一个项目用两个框架，也没啥；如果这两个框架要数据流通交互，可能需要另一个的状态管理吧。<br>觉得挺有趣的，翻了下kibana的first commit，似乎一开始是用jsp的。看来他们的技术栈一直在更新。</p>
+<p>由于之前的样式改造，我使用的是叠加样式层，样式代码是写在自家产品上。<br>我现在需要把样式代码，迁移到kibana的源码中。写在哪个模块，模块的路径都得自己找。<br>只能通过反查样式的来源，找到对应的模块。之前的工作经历，多次对ui库进行样式定制化改造。<br>无论是改原来的样式还是叠加样式，再或者样式调试，这些对我来说都不难。</p>
+<p><strong>样式改造完整后，自然需要部署。但我也多次卡在项目的工程化上，每一次编译都跟赌博一样，不安且动荡。</strong></p>
+<p>而且服务器环境的编译。又跟本地的编译不一样，本地是win10, 服务器是ubuntu。</p>
+<p>而且公司的是不允许本地出包的，所有的项目编译都是在gitlab的ci而且也全部docker化，也跟jenkins有集成。</p>
+<p><strong>我需要把kibana的源码，部署到gitlab的ci或者jenkins上，然后编译，出docker包。</strong></p>
+<p>到这里，陷入了巨大的困境。</p>
+<p>小插曲：跟部门老大喝咖啡，我问：业内拉开源项目，二开这种类型的项目，很常见吗？<br>部门老大：不常见。<br>我：那二开开源项目呢？<br>部门老大：这就比较多了。<br>点了下头，表示理解。</p>
+<p><strong>搞不定，卡死，摇人。让PM、部门老大了解情况，他们帮我摇了CTO协助我。</strong></p>
+<p>CTO过了几天，给了我一份文档，完美的二开教程方案────从拉项目、到编译、到部署、到出docker包。文档精简但很全面。</p>
+<p>值得一提的是，我当时是把源码clone到本地，然后再上传到部门的gitlab平台。<br>CTO直接用了gitlab的mirror功能，把kibana的repo镜像到gitlab上。<br>专家级别的操作，果然高级！</p>
+<p>有了CTO的文档，我任务推动得非常顺利，只是前期我自己摸索的… 就又废弃了。</p>
+<p>再次在服务器上，拉取CTO创建的kibana镜像项目，检出新分支… 迁移代码。</p>
+<p>但没想到，又在CI的环节出了点问题：CI超时了，默认都是10分钟，跟后端大佬沟通（彼时运维已经离职了，后端大佬兼任运维），帮我调大了CI的timeout为1h。<br>这是何等的巨无霸项目…</p>
+<p>最后顺利上线了，测试同事测试页面的配置，页面效果符合需求。UI设计师也验收了样式，老板也看了，表示满意。</p>
+<p>后面也完全上线了，每次发布产品版本，kibana都会作为产品的一个组件一起发布。我们使用的是增量部署，不变动kibana，就不需要重复编译。</p>
+<h2 id="回顾过程"><a href="#回顾过程" class="headerlink" title="回顾过程"></a>回顾过程</h2><p><img src="/post/kibana-story/step.png"></p>
+<h2 id="协作小结"><a href="#协作小结" class="headerlink" title="协作小结"></a>协作小结</h2><p><img src="/post/kibana-story/help.png"></p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>这个任务其实有很多可以优化的地方，我只是一个前端大头兵，当时任务只分配给我一个人。<br>其实在团队协同上，后端同事也不熟悉kibana，Elasticsearch，提供给我的帮助也有限。<br>但其实我们是一家极客公司，让后端同事去学一下，也没那么难，只是都有自己的事情罢了。<br>所以开发同事都默认不关自己事，所以也在工作配合没那么顺利。<br>当然我也摇了部门老大，让他分析这种情况怎么处理。</p>
+<p>就比如我docker、nginx其实并不熟悉，我跟老大沟通：我可以为kibana这个任务再去全面细细学一遍，但可能需要一些时间。<br>老大：别，不需要，部门设定了不同的岗位就是各司其职，我去协调就行。</p>
+<p>上帝角度，理想情况：</p>
+<ul>
+<li>老板：既然想介入技术选型，也行，跟CTO、PM、部门大佬沟通，做一些技术调研</li>
+<li>老大：任务总负责人，牵头整个团队推动整个事情，任务划分，kibana</li>
+<li>PM：需求分析，产品设计，功能验收</li>
+<li>CTO：总体技术方案设计，技术支持</li>
+<li>后端同事：负责Elasticsearch层</li>
+<li>运维同事：负责docker、nginx层</li>
+<li>前端同事：负责kibana页面</li>
+</ul>
+<p>这个任务当时磕磕绊绊两个月，只有我一个任务执行人，其他人都是我主动沟通，请求协助。<br>如果按照我理想的情况，应该1周内可以完成。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>没啥好总结了的。只是这个任务的曲折，还有团队的协调实在让庞大，让我影响深刻。</p>
+<p>最后附带一个朋友的阅读感想：</p>
+<pre class="line-numbers language-none"><code class="language-none">我觉得每个人的这个成长，就是在有突破的时候，就是在心理上有那个跨越的时候，他总会经历一段沉沉浮浮。而且呢，就像那个蘑菇一样。
+蘑菇它其实上在生长出来之前，它是一直在黑暗的地方，在背面就是悄悄的有朝一日呢，这个太阳光洒过来的时候。这个蘑菇一下子就长大了，就有这种这种感觉。
+它就像在成长的，就是还没有长出来的蘑菇一样，就是连绵的阴雨，黑暗、潮湿，然后没有任何人去在乎，没有任何人人去注意到。然后自己就在经历着这些阴雨连绵，然后还要就是虫害这些乱七八糟的东西，在长出来之前都是这样子的一个环境。然后突然阳光洒下来的时候，自己已经做足了准备，就可以绽放出来。
+
+其实，你这个阶段分享你前一个阶段的故事，也是一种回顾，也是一种就是对自己的一种犒劳。就是每当有困难的时候，就是告诉自己，我自己是那么那么那么的棒。就是这个样子，我都过来了，就是只有我可以自己去肯定我自己，没有其他人能够去评价我，或者没有其他人能够去审判我，因为。我自己的路是我自己去走的，这其中的那种艰辛和心酸，没有任何人去代替。世界上没有感同身受，因为没有人能够完完整整的经历一遍你自己所经历的东西。
+
+其实这种带有感性的分享，我觉得他既是对自己的一个总结，也是对自己的下一个阶段的开头，是一个等于说一个奠基石，就是给自己。长个精神，让自己有朝一日回过头来看到的时候，觉得哇，自己的曾经是那么的鲜活，那自己的未来和以后也要一直的去鲜活呀，而且在论坛上就是别的人看到了之后。就是其实上是会鼓励到下一代的这个人员的，就是我特别羡慕搞技术，像你这种搞技术的人的原因是就是特别纯粹，就是很纯粹由A到B，包括。就是你有什么就是冲突，你就是很纯粹。
+
+你也很纯粹的去表达出来，然后并且你的这种纯粹就是贯穿了你整个人，就是在做技术上，因为不纯粹的人他干不了技术。
+
+内心弯弯绕绕，太多内心不坚定、不纯粹的人，他搞不了任何的技术。
+
+真的就是这种难度超大，把问题抛给你去解决，但是这个问题它不是你的问题，这个问题它是根本上的问题，但是我觉得超级新奇就是。自己要永远感激自己。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>screw-hand
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://screw-hand.com/post/kibana-story/" title="记一次kibana二开经历">https://screw-hand.com/post/kibana-story/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Kibana/" rel="tag"># Kibana</a>
+              <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91/" rel="tag"># 二次开发</a>
+              <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="tag"># 经验分享</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/why-rss/" rel="prev" title="why-rss">
+                  <i class="fa fa-chevron-left"></i> why-rss
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">screw-hand</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/screw-hand" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.4.3/mermaid.min.js","integrity":"sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"screw-hand","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
